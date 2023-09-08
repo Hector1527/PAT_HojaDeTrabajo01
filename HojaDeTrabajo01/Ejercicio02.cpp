@@ -2,13 +2,19 @@
 #include <algorithm>
 #include <string>
 
+
+bool Palindroma(string s, int izq, int der)
+{
+    if (izq >= der)
+        return true;
+
+    if (s[izq] != s[der])
+        return false;
+
+    return Palindroma(s, izq + 1, der - 1);
+}
 bool Ejercicio02::isPalindrome(string& s)
 {
-        s.erase(remove_if(s.begin(), s.end(), [](char c) {
-            return !isalpha(c);
-            }), s.end());
 
-        transform(s.begin(), s.end(), s.begin(), ::tolower);
-
-        return s == string(s.rbegin(), s.rend());
+    return Palindroma(s, 0, s.length() - 1);
 }
