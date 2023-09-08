@@ -1,0 +1,17 @@
+name: Ejemplo de flujo de trabajo
+
+on:
+  push:
+    branches:
+      - main  # Ejecutar cuando haya confirmaciones en la rama 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # El sistema operativo en el que se ejecutará el flujo de trabajo
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v2  # Acción para obtener el código del repositorio
+
+      - name: Ejecutar un comando
+        run: echo "Hola, GitHub Actions"  # Ejemplo de comando a ejecutar
