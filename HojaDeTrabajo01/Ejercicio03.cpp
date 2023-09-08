@@ -2,10 +2,10 @@
 
 bool Potencia(int n)
 {
-    if (n == 1)
+    if (n == 1 || n == -1)
         return true;
 
-    if (n < 1 || n%2!=0)
+    if (n%2!=0 || n==0)
         return false;
 
     return Potencia(n / 2);
